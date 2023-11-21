@@ -1,4 +1,4 @@
-import SectionTitle from "../../SectionTitle";
+import SectionTitle from "../../../SectionTitle";
 import KnowTech from "./KnowTech";
 import { TbBrandNextjs, TbBrandTypescript } from "react-icons/tb";
 import { FaNode } from "react-icons/fa";

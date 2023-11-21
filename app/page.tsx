@@ -1,4 +1,4 @@
-import KnowTechs from "./components/pages/KnowTechs";
+import KnowTechs from "./components/pages/home/KnowTechs";
 import HeroSection from "./components/pages/home/HeroSection";
 import HighlightedProjects from "./components/pages/home/HighlightedProjects";
 import WorkExperience from "./components/pages/home/WorkExperience";
