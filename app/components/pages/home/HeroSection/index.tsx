@@ -31,9 +31,12 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <TechBadge name="Next.js" key={index} />
-            ))}
+            <TechBadge name="TypeScript" />
+            <TechBadge name="React" />
+            <TechBadge name="Next.js" />
+            <TechBadge name="TailwindCSS" />
+            <TechBadge name="MongoDB" />
+            <TechBadge name="PostgreSQL" />
           </div>
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
             <Button className="shadow-button w-max">
