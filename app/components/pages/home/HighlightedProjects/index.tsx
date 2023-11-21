@@ -42,7 +42,7 @@ export const HighlightedProjects = () => {
         <span className="text-gray-400">Se interessou?</span>
         <Link href="/projects" className="inline-flex">
           Ver todos
-          <HiArrowNarrowRight />
+          <HiArrowNarrowRight size={16} />
         </Link>
       </p>
     </section>

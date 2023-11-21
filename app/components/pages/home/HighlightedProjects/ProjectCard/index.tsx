@@ -42,7 +42,7 @@ export const ProjectCard = ({
           <TechBadge name="Next.js" />
         </div>
         <Link href={"/projetcs/book-wise"}>
-          Ver Projeto <HiArrowNarrowRight />
+          Ver Projeto <HiArrowNarrowRight size={16} />
         </Link>
       </div>
     </div>
