@@ -8,6 +8,7 @@ type ProjectCardProps = {
   imageSrc: string;
   thumbnailAlt: string;
   description: string;
+  technologies: string[];
 };
 
 export const ProjectCard = ({
@@ -15,6 +16,7 @@ export const ProjectCard = ({
   imageSrc,
   thumbnailAlt,
   description,
+  technologies,
 }: ProjectCardProps) => {
   return (
     <div className="flex gap-6 lg:gap-12 flex-col lg:flex-row">
@@ -39,7 +41,9 @@ export const ProjectCard = ({
         </h3>
         <p className="text-gray-400 my-6">{description}</p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-[350px]">
-          <TechBadge name="Next.js" />
+          {technologies.map((tech, index) => (
+            <TechBadge key={index} name={tech} /> // Renderize as TechBadges aqui
+          ))}
         </div>
         <Link href={"/projetcs/book-wise"}>
           Ver Projeto <HiArrowNarrowRight size={16} />

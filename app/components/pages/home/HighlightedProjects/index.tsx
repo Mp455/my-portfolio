@@ -11,6 +11,15 @@ export const HighlightedProjects = () => {
       thumbnailAlt: "Thumbnail do Projeto FSW Trips",
       description:
         "Site de reservas de viagens com autenticação do Google e forma de pagamento Stripe.",
+      technologies: [
+        "Next.Js",
+        "TypeScript",
+        "React",
+        "TailwindCSS",
+        "Prisma",
+        "PostgreSQL",
+        "Google Auth",
+      ],
     },
     {
       title: "React Notas",
@@ -18,6 +27,7 @@ export const HighlightedProjects = () => {
       thumbnailAlt: "Thumbnail do Projeto React Notas",
       description:
         "Projeto no qual você consegue adicionar notas e listar tags e links de tarefas importantes que deseja salvar.",
+      technologies: ["React", "JavaScript", "SQLite", "Styled Components"],
     },
   ];
 
@@ -33,6 +43,7 @@ export const HighlightedProjects = () => {
             imageSrc={project.imageSrc}
             thumbnailAlt={project.thumbnailAlt}
             description={project.description}
+            technologies={project.technologies}
           />
         ))}
       </div>
