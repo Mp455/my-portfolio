@@ -30,10 +30,7 @@ export const BackToTop = () => {
           animate={{ opacity: 1, right: 16 }}
           exit={{ opacity: 0, right: -10 }}
         >
-          <Button
-            onClick={scrollToTop}
-            className="shadow-lg shadow-emerald-400/20"
-          >
+          <Button onClick={scrollToTop} className="shadow-lg shadow-red-400/20">
             <TbArrowNarrowUp size={20} />
           </Button>
         </motion.div>
