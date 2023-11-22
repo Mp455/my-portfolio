@@ -1,5 +1,5 @@
 import SectionTitle from "../../../SectionTitle";
-import KnowTech from "./KnowTech";
+import KnownTech from "./KnownTech";
 import { TbBrandNextjs, TbBrandTypescript } from "react-icons/tb";
 import { FaNode } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
@@ -11,7 +11,7 @@ import { FaGitSquare } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiStyledcomponents } from "react-icons/si";
-export const KnowTechs = () => {
+export const KnownTechs = () => {
   const MOCK_TECNOLOGIES = [
     {
       icon: <FaHtml5 />,
@@ -68,11 +68,11 @@ export const KnowTechs = () => {
       <SectionTitle subtitle="Competências" title="Conhecimentos" />
       <div className="grid grid-cols-[repeat(auto-fit,minmax(265px,1fr))] gap-3 mt-[50px]">
         {MOCK_TECNOLOGIES.map((tech, index) => (
-          <KnowTech key={index} tech={tech} />
+          <KnownTech key={index} tech={tech} />
         ))}
       </div>
     </section>
   );
 };
 
-export default KnowTechs;
+export default KnownTechs;

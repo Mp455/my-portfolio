@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 
-type KnowTechProps = {
+type KnownTechProps = {
   tech: {
     icon: ReactNode;
     name: string;
   };
 };
 
-export const KnowTech = ({ tech }: KnowTechProps) => {
+export const KnownTech = ({ tech }: KnownTechProps) => {
   return (
     <div className="p-6 rounded-lg bg-gray-600/20 text-white flex flex-col gap-2 hover:text-red-600 hover:bg-gray-600/30 transition-all">
       <div className="flex items-center justify-between">
@@ -18,4 +18,4 @@ export const KnowTech = ({ tech }: KnowTechProps) => {
   );
 };
 
-export default KnowTech;
+export default KnownTech;
