@@ -18,7 +18,7 @@ export const ProjectDetails = () => {
       <SectionTitle
         subtitle="Projetos"
         title="FSW Trips"
-        className="text-center items-center sm:[%>h3]:text-4xl"
+        className="text-center items-center sm:[&>h3]:text-4xl"
       />
       <p className="text-gray-400 text-center max-w-[640px] sm:my-6 text-sm sm:text-base">
         Site de reservas de viagens com autenticação do Google e forma de
