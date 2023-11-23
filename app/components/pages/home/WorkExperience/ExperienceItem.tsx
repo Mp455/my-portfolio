@@ -26,9 +26,9 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
 
   const startDate = new Date(experience.startDate);
 
-  const formattedStartDate = format(startDate, "MM yyyy", { locale: ptBR });
+  const formattedStartDate = format(startDate, "MMM yyyy", { locale: ptBR });
   const formattedEndDate = endDate
-    ? format(new Date(endDate), "MM yyyy", { locale: ptBR })
+    ? format(new Date(endDate), "MMM yyyy", { locale: ptBR })
     : "o momento";
 
   const end = endDate ? new Date(endDate) : new Date();
