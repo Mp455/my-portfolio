@@ -1,29 +1,61 @@
 import { TechBadge } from "@/app/components/TechBadge";
+import { workExperience } from "@/app/types/work-experiences";
+import { RichText } from "@/app/components/RichText";
 import Image from "next/image";
-
+import {
+  differenceInMonths,
+  differenceInYears,
+  format,
+  Locale,
+} from "date-fns";
+import { ptBR } from "date-fns/locale";
 type ExperienceItemProps = {
-  experience: {
-    image: string;
-    url: string;
-    name: string;
-    title: string;
-    duration: string;
-    description: string;
-    technologies: string[];
-  };
+  experience: workExperience;
 };
 
 export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
+  const {
+    endDate,
+    companyName,
+    companyLogo,
+    companyUrl,
+    description,
+    role,
+    technologies,
+  } = experience;
+
+  const startDate = new Date(experience.startDate);
+
+  const formattedStartDate = format(startDate, "MM yyyy", { locale: ptBR });
+  const formattedEndDate = endDate
+    ? format(new Date(endDate), "MM yyyy", { locale: ptBR })
+    : "o momento";
+
+  const end = endDate ? new Date(endDate) : new Date();
+
+  const months = differenceInMonths(end, startDate);
+  const years = differenceInYears(end, startDate);
+  const monthsRemaining = months - (years % 12);
+
+  const formattedDuration =
+    years > 0
+      ? `${years} ano${years > 1 ? "s" : ""}${
+          monthsRemaining > 0
+            ? ` e ${monthsRemaining} mes${monthsRemaining > 1 ? "es" : ""}`
+            : ""
+        }`
+      : `${months} mes${months > 1 ? "es" : ""}`;
+
   return (
     <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
       <div className="flex flex-col items-center gap-4">
         <div className="rounded-full border border-gray-500 p-0.5">
           <Image
-            src={experience.image}
+            src={companyLogo.url}
             width={40}
             height={40}
             className="rounded-full"
-            alt="Logo da Empresa"
+            alt={`Logo da empresa: ${companyLogo}`}
           />
         </div>
         <div className="h-full w-[1px] bg-gray-800"></div>
@@ -31,22 +63,29 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
       <div>
         <div className="flex flex-col gap-2 text-sm sm:text-base">
           <a
-            href={experience.url}
+            href={companyUrl}
             target="_blank"
             className="text-gray-500 hover:text-red-500 transition-colors"
           >
-            {experience.name}
+            {companyName}
           </a>
-          <h4 className="text-gray-300">{experience.title}</h4>
-          <span className="text-gray-500">{experience.duration}</span>
-          <p className="text-gray-400">{experience.description}</p>
+          <h4 className="text-gray-300">{role}</h4>
+          <span className="text-gray-500">
+            {formattedStartDate}• {formattedEndDate}• ({formattedDuration})
+          </span>
+          <div className="text-gray-400">
+            <RichText content={description.raw} />
+          </div>
 
           <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
             Competências
           </p>
           <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
-            {experience.technologies.map((tech, index) => (
-              <TechBadge name={tech} key={index} />
+            {technologies.map((tech) => (
+              <TechBadge
+                name={tech.name}
+                key={`experience-${companyName}-tech-${tech.name}`}
+              />
             ))}
           </div>
         </div>
