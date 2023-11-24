@@ -1,13 +1,10 @@
+"use client";
+
 import { TechBadge } from "@/app/components/TechBadge";
 import { workExperience } from "@/app/types/work-experiences";
 import { RichText } from "@/app/components/RichText";
 import Image from "next/image";
-import {
-  differenceInMonths,
-  differenceInYears,
-  format,
-  Locale,
-} from "date-fns";
+import { differenceInMonths, differenceInYears, format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 type ExperienceItemProps = {
   experience: workExperience;
@@ -35,7 +32,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
 
   const months = differenceInMonths(end, startDate);
   const years = differenceInYears(end, startDate);
-  const monthsRemaining = months - (years % 12);
+  const monthsRemaining = months % 12;
 
   const formattedDuration =
     years > 0
@@ -46,6 +43,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         }`
       : `${months} mes${months > 1 ? "es" : ""}`;
 
+  console.log(experience);
   return (
     <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
       <div className="flex flex-col items-center gap-4">
@@ -71,13 +69,13 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
           </a>
           <h4 className="text-gray-300">{role}</h4>
           <span className="text-gray-500">
-            {formattedStartDate}• {formattedEndDate}• ({formattedDuration})
+            {formattedStartDate} • {formattedEndDate} • ({formattedDuration})
           </span>
           <div className="text-gray-400">
             <RichText content={description.raw} />
           </div>
 
-          <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
+          <p className="text-white text-sm mb-3 mt-6 font-semibold">
             Competências
           </p>
           <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">

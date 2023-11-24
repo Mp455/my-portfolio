@@ -1,8 +1,10 @@
+import { ProjectSection } from "@/app/types/projects";
 import Image from "next/image";
 
-const sections = [{ title: "Tela Principal", image: "/images/thumb-fsw.png" }];
-
-export const ProjectSections = () => {
+type ProjectSectionsProps = {
+  sections: ProjectSection[];
+};
+export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
   return (
     <section className="container my-12 md:my-32 flex flex-col md:gap-32 ">
       {sections.map((section) => (
@@ -14,7 +16,7 @@ export const ProjectSections = () => {
             {section.title}
           </h2>
           <Image
-            src={section.image}
+            src={section.image.url}
             width={1080}
             height={672}
             className="w-full aspect-auto rounded-lg object-cover"

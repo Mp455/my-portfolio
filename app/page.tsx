@@ -13,7 +13,7 @@ const getPageData = async (): Promise<HomePageData> => {
             raw
           }
       technologies {
-            name
+          name
           }
       profilePicture {
         url
@@ -40,8 +40,8 @@ const getPageData = async (): Promise<HomePageData> => {
     }
     workExperiences {
       companyLogo {
-            url
-          }
+          url
+        }
       role
       companyName
       companyUrl
@@ -63,7 +63,6 @@ const getPageData = async (): Promise<HomePageData> => {
 
 export default async function Home() {
   const { page: pageData, workExperiences } = await getPageData();
-  console.log(workExperiences);
   return (
     <>
       <HeroSection homeInfo={pageData} />
