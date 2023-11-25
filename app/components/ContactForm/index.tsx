@@ -20,9 +20,7 @@ export const ContactForm = () => {
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onSubmit = (data: contactFormData) => {
-    console.log(data);
-  };
+  const onSubmit = (data: contactFormData) => {};
   return (
     <section
       id="contact"

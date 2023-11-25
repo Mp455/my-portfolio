@@ -43,7 +43,6 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         }`
       : `${months} mes${months > 1 ? "es" : ""}`;
 
-  console.log(experience);
   return (
     <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
       <div className="flex flex-col items-center gap-4">
