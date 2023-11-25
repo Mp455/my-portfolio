@@ -6,6 +6,18 @@ import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import { BackToTop } from "./components/BackToTop";
 
+export const metadata = {
+  title: {
+    default: "Home",
+    template: "%s | MP Dev",
+  },
+  icons: [
+    {
+      url: "/images/logo.svg",
+    },
+  ],
+};
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
