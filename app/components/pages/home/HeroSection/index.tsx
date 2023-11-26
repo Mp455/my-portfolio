@@ -69,13 +69,22 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             </div>
           </div>
         </motion.div>
-        <Image
-          width={300}
-          height={300}
-          src={homeInfo.profilePicture.url}
-          alt="Foto de Perfil"
-          className="w-[350px] h-[350px] lg:w-[400px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
-        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 200, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 200, scale: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="origin-center"
+        >
+          <Image
+            width={300}
+            height={300}
+            src={homeInfo.profilePicture.url}
+            alt="Foto de Perfil"
+            className="w-[350px] h-[350px] lg:w-[400px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
+          />
+        </motion.div>
       </div>
     </section>
   );
