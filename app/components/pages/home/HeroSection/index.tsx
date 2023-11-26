@@ -39,8 +39,15 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {homeInfo.technologies &&
-              homeInfo.technologies.map((tech) => (
-                <TechBadge name={tech.name} />
+              homeInfo.technologies.map((tech, i) => (
+                <TechBadge
+                  name={tech.name}
+                  key={`Intro-tech-${tech.name}`}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                />
               ))}
           </div>
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
