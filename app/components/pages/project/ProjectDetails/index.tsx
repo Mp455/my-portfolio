@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/app/components/Button";
 import SectionTitle from "@/app/components/SectionTitle";
 import { TechBadge } from "@/app/components/TechBadge";
@@ -7,7 +8,8 @@ import { Link } from "@/app/components/Link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { Project } from "@/app/types/projects";
 import { RichText } from "@/app/components/RichText";
-import { techBadgeAnimation } from "@/app/lib/animations";
+import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
+import { motion } from "framer-motion";
 
 export type ProjectDetailsProps = {
   project: Project;
@@ -27,15 +29,26 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         title={project.title}
         className="text-center items-center sm:[&>h3]:text-4xl"
       />
-      <div className="text-gray-400 text-center max-w-[640px] sm:my-6 text-sm sm:text-base">
+      <motion.div
+        className="text-gray-400 text-center max-w-[640px] sm:my-6 text-sm sm:text-base"
+        {...fadeUpAnimation}
+      >
         <RichText content={project.description.raw} />
-      </div>
+      </motion.div>
       <div className="w-full max-w[330px] flex flex-wrap gap-2 items-center justify-center">
-        {project.technologies.map((tech) => (
-          <TechBadge key={tech.name} name={tech.name} {...techBadgeAnimation} />
+        {project.technologies.map((tech, i) => (
+          <TechBadge
+            key={tech.name}
+            name={tech.name}
+            {...techBadgeAnimation}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+          />
         ))}
       </div>
-      <div className="my-6 sm:my-12 flex items-center gap-2 sm:gap-4 flex-col sm:flex-row">
+      <motion.div
+        className="my-6 sm:my-12 flex items-center gap-2 sm:gap-4 flex-col sm:flex-row"
+        {...fadeUpAnimation}
+      >
         {project?.githubUrl && (
           <a href={project.githubUrl} target="_blank">
             <Button className="min-w-[180px]">
@@ -52,7 +65,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             </Button>
           </a>
         )}
-      </div>
+      </motion.div>
       <Link href="/projects">
         <HiArrowNarrowLeft size={20} />
         Voltar para projetos
