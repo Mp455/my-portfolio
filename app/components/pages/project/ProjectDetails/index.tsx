@@ -7,6 +7,7 @@ import { Link } from "@/app/components/Link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { Project } from "@/app/types/projects";
 import { RichText } from "@/app/components/RichText";
+import { techBadgeAnimation } from "@/app/lib/animations";
 
 export type ProjectDetailsProps = {
   project: Project;
@@ -31,7 +32,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       </div>
       <div className="w-full max-w[330px] flex flex-wrap gap-2 items-center justify-center">
         {project.technologies.map((tech) => (
-          <TechBadge key={tech.name} name={tech.name} />
+          <TechBadge key={tech.name} name={tech.name} {...techBadgeAnimation} />
         ))}
       </div>
       <div className="my-6 sm:my-12 flex items-center gap-2 sm:gap-4 flex-col sm:flex-row">
