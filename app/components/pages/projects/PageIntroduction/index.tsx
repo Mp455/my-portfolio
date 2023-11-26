@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { Link } from "../../../Link";
 import SectionTitle from "../../../SectionTitle";
 import { HiArrowNarrowLeft } from "react-icons/hi";
@@ -9,7 +11,13 @@ export const PageIntroduction = () => {
         title="Meus projetos"
         className="text-center items-center [&>h3]:text-4xl"
       />
-      <div className="flex flex-col items-center">
+      <motion.div
+        className="flex flex-col items-center"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 0, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.6 }}
+      >
         <p className="text-white text-center max-w-[640px] my-6 text-sm sm:text-base">
           Aqui destaques meus projetos desenvolvidos. Navegue e explore os
           projetos crirados, as tecnologias utilizadas e as funcionalidades
@@ -20,7 +28,7 @@ export const PageIntroduction = () => {
           <HiArrowNarrowLeft size={20} />
           Voltar para Home
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };
