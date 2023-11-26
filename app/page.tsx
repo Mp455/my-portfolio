@@ -1,6 +1,6 @@
 import KnownTechs from "./components/pages/home/KnownTechs";
 import HeroSection from "./components/pages/home/HeroSection";
-import HighlightProjects from "./components/pages/home/HighlightedProjects";
+import { HighlightProjects } from "./components/pages/home/HighlightedProjects";
 import WorkExperience from "./components/pages/home/WorkExperience";
 import { fetchHygraphQuery } from "./utils/fetch-hygraph-query";
 import { HomePageData } from "./types/page-info";
