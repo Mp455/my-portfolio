@@ -10,7 +10,7 @@ Muito feliz em terminar meu portfólio para exibir minhas principais habilidades
 
 Link para Deploy:
 
-[MP Portfólio](https://reactnotas.netlify.app/)
+[MP Portfólio](https://mpdev-portfolio.vercel.app/)
 
 ## Referência
 
