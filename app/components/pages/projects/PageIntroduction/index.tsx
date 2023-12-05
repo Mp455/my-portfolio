@@ -19,7 +19,7 @@ export const PageIntroduction = () => {
         transition={{ duration: 0.6 }}
       >
         <p className="text-white text-center max-w-[640px] my-6 text-sm sm:text-base">
-          Aqui destaques meus projetos desenvolvidos. Navegue e explore os
+          Aqui destaquei meus projetos desenvolvidos. Navegue e explore os
           projetos crirados, as tecnologias utilizadas e as funcionalidades
           implementadas à vontade.
         </p>
