@@ -45,7 +45,12 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
 };
 
 export default async function Project({ params: { slug } }: ProjectProps) {
-  const { project } = await getProjectDetails(slug);
+  const data = await getProjectDetails(slug);
+  const project = data?.project;
+
+  if (!project) {
+    return <p>Projeto não encontrado.</p>;
+  }
 
   return (
     <>
