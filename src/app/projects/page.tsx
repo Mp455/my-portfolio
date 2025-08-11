@@ -2,8 +2,8 @@ import { ProjectsPageData } from "../../types/page-info";
 import { fetchHygraphQuery } from "../../utils/fetch-hygraph-query";
 import { PageIntroduction } from "./PageIntroduction";
 import { ProjectsList } from "./ProjectsList";
-
-export const metadata = {
+import type { Metadata } from "next";
+export const metadata: Metadata = {
   title: "Projetos",
 };
 
