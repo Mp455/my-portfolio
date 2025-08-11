@@ -4,6 +4,7 @@ import SectionTitle from "../../components/SectionTitle";
 import HorizontalDivider from "../../components/Divider/horizontal";
 import Link from "next/link";
 import { Project } from "@/types/projects";
+import { ButtonLink } from "@/app/components/Link";
 
 type HighlightProjectsProps = {
   projects: Project[];
@@ -24,10 +25,10 @@ export const HighlightProjects = ({ projects }: HighlightProjectsProps) => {
         ))}
         <p className="flex items-center gap-1.5">
           <span className="text-gray-400">Se interessou?</span>
-          <Link href="/projects" className="inline-flex">
+          <ButtonLink href="/projects" className="inline-flex">
             Ver todos
             <HiArrowNarrowRight />
-          </Link>
+          </ButtonLink>
         </p>
       </div>
     </section>

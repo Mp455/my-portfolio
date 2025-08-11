@@ -1,10 +1,10 @@
 "use client";
 
+import { ButtonLink } from "@/app/components/Link";
 import { TechBadge } from "@/app/components/TechBadge";
 import { Project } from "@/types/projects";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
 type ProjectCardProps = {
@@ -58,10 +58,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           ))}
         </div>
 
-        <Link href={`/projects/${project.slug}`}>
+        <ButtonLink href={`/projects/${project.slug}`}>
           Ver projeto
           <HiArrowNarrowRight />
-        </Link>
+        </ButtonLink>
       </div>
     </motion.div>
   );

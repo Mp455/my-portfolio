@@ -74,7 +74,7 @@ export const ContactForm = () => {
             {...register("message")}
           />
           <Button
-            className="mt-6 h-max mx-auto shadow-button"
+            className="mt-6 h-max mx-auto shadow-button cursor-pointer"
             disabled={isSubmitting}
           >
             Enviar mensagem <HiArrowNarrowRight size={16} />

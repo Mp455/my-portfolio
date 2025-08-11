@@ -10,10 +10,11 @@ import SectionTitle from "../../components/SectionTitle";
 
 import { TechBadge } from "../../components/TechBadge";
 import Button from "../../components/Button";
-import Link from "next/link";
+
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { Project } from "@/types/projects";
 import { fadeUpAnimation, techBadgeAnimation } from "@/lib/animations";
+import { ButtonLink } from "@/app/components/Link";
 
 export type ProjectDetailsProps = {
   project: Project;
@@ -70,10 +71,10 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
           </a>
         )}
       </motion.div>
-      <Link href="/projects">
+      <ButtonLink href="/projects">
         <HiArrowNarrowLeft size={20} />
         Voltar para projetos
-      </Link>
+      </ButtonLink>
     </section>
   );
 };
